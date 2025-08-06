@@ -4,7 +4,8 @@ import type {
   ValidateForm,
   ValidateField,
   ValidatorMap,
-  FormValidationResult
+  FormValidationResult,
+  GetCollectedData
 } from './../types';
 import required from './../validators/required';
 import pan from './../validators/pan';
@@ -59,7 +60,7 @@ function makeValidateFormFn(fields: Field[]): ValidateForm {
 function makeOnSubmitFn(fields: Field[], validate: ValidateForm) {
   let collectedData: Record<string, unknown> = {};
 
-  const getCollectedData = () => collectedData;
+  const getCollectedData: GetCollectedData = () => collectedData;
   const onSubmit = async (data: Record<string, unknown>) => {
     const { isValid } = await validate(data);
 
@@ -74,15 +75,14 @@ function makeOnSubmitFn(fields: Field[], validate: ValidateForm) {
   return { onSubmit, getCollectedData };
 }
 
-export default function(fields: Field[]) {
+export default function(fields: Field[]): Form {
   const validate = makeValidateFormFn(fields);
   const { onSubmit, getCollectedData } = makeOnSubmitFn(fields, validate);
 
-  const paymentForm: Form = {
+  return {
     fields,
     validate,
-    onSubmit
-  }
-
-  return { paymentForm, getCollectedData };
+    onSubmit,
+    getCollectedData
+  };
 }

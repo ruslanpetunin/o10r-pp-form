@@ -4,7 +4,10 @@ export interface Form {
   fields: Field[],
   validate: ValidateForm,
   onSubmit: (data: Record<string, unknown>) => Promise<void> | void,
+  getCollectedData: GetCollectedData
 }
+
+export type GetCollectedData = () => Record<string, unknown>;
 
 export type ValidatorMap = Partial<{
   [K in keyof FieldValidationRules]: Validator<K>

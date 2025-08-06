@@ -8,4 +8,4 @@ export { default as expiryYear } from './validators/expiryYear';
 export { default as pan } from './validators/pan';
 export { default as required } from './validators/required';
 
-export * from './types';
+export type * from './types';
