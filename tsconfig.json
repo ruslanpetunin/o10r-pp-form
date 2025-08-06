@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.build.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "orchestrator-pp-core": ["./../orchestrator-pp-core/src", "orchestrator-pp-core"]
+    }
+  },
+}

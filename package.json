@@ -1,0 +1,32 @@
+{
+  "name": "orchestrator-pp-form",
+  "version": "1.0.0",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruslanpetunin/orchestrator-pp-core"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --dts --format esm,cjs --clean --tsconfig tsconfig.build.json"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "orchestrator-pp-core": "^4.0.0"
+  }
+}
