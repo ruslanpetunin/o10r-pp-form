@@ -1,4 +1,4 @@
-import type { Field, FieldValidationRules } from 'orchestrator-pp-core';
+import type { Field, FieldValidationRules } from 'o10r-pp-core';
 
 export interface Form {
   fields: Field[],

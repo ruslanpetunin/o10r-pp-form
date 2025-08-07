@@ -1,5 +1,5 @@
 import type { ValidateField, ValidatorMap, Validator } from './../types';
-import type { Field, FieldValidationRules } from 'orchestrator-pp-core';
+import type { Field, FieldValidationRules } from 'o10r-pp-core';
 
 export default function(field: Field, validatorMap: ValidatorMap): ValidateField {
   const validate: ValidateField = async (value, formData) => {

@@ -1,4 +1,4 @@
-import type { Field } from 'orchestrator-pp-core';
+import type { Field } from 'o10r-pp-core';
 import type {
   Form,
   ValidateForm,

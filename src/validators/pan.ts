@@ -1,5 +1,5 @@
 import type { Validator } from './../types';
-import { useCardTypeDetector } from 'orchestrator-pp-core';
+import { useCardTypeDetector } from 'o10r-pp-core';
 
 const { detect } = useCardTypeDetector();
 

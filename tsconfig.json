@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "orchestrator-pp-core": ["./../orchestrator-pp-core/src", "orchestrator-pp-core"]
+      "o10r-pp-core": ["./../o10r-pp-core/src", "o10r-pp-core"]
     }
   },
 }
