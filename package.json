@@ -1,6 +1,6 @@
 {
   "name": "o10r-pp-form",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -27,6 +27,6 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "o10r-pp-core": "^4.0.0"
+    "o10r-pp-core": "^0.1.0"
   }
 }
