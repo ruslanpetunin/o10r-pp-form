@@ -13,13 +13,17 @@ function luhnCheck(cardNumber: string): boolean {
   /* eslint-enable */
 }
 
-const validator: Validator<'pan'> = (value) => {
+const validator: Validator<'pan'> = (value, formData, allowedBrands) => {
   if (typeof value === 'string') {
     const cardNumber: string = value.replace(/[^0-9]/g, '');
     const cardNumberLength: number = cardNumber.length;
     const cardType = detect(cardNumber);
 
     if (cardType) {
+      if (allowedBrands && !allowedBrands.includes(cardType.code)) {
+        return false;
+      }
+
       if (cardNumberLength >= cardType.minLength && cardNumberLength <= cardType.maxLength) {
         if (cardType.luhn) {
           return luhnCheck(cardNumber);
